@@ -1,0 +1,82 @@
+tacacs server TACACS-SRV-1>address ipv4 10.1.1.10
+tacacs server TACACS-SRV-1>key CHANGE_ME_Tacacs#Key2026
+aaa group server tacacs+ TACACS-GROUP>server name TACACS-SRV-1
+aaa group server tacacs+ TACACS-GROUP>ip tacacs source-interface Loopback0
+archive>log config
+archive>log config>logging enable
+key chain EIGRP-KEYCHAIN>key 1
+key chain EIGRP-KEYCHAIN>key 1>key-string CHANGE_ME_Eigrp#Key2026
+interface Loopback0>description MGMT-SOURCE-LOOPBACK
+interface Loopback0>ip address 10.10.10.10 255.255.255.255
+interface GigabitEthernet0/0>description EXTERNAL-UNTRUSTED
+interface GigabitEthernet0/0>ip address 198.51.100.2 255.255.255.252
+interface GigabitEthernet0/0>ip access-group ACL-EXTERNAL-IN in
+interface GigabitEthernet0/0>ip verify unicast source reachable-via rx allow-default
+interface GigabitEthernet0/0>no ip proxy-arp
+interface GigabitEthernet0/0>no shutdown
+interface GigabitEthernet0/1>description INTERNAL-TRUSTED
+interface GigabitEthernet0/1>ip address 10.1.0.1 255.255.255.0
+interface GigabitEthernet0/1>ip ospf message-digest-key 1 md5 CHANGE_ME_Ospf#Key2026
+interface GigabitEthernet0/1>no ip proxy-arp
+interface GigabitEthernet0/1>no shutdown
+interface GigabitEthernet0/2>description MGMT-ZONE
+interface GigabitEthernet0/2>ip address 10.1.1.1 255.255.255.0
+interface GigabitEthernet0/2>no ip proxy-arp
+interface GigabitEthernet0/2>no shutdown
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface default
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface default>passive-interface
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-interface
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>no passive-interface
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication mode md5
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication key-chain EIGRP-KEYCHAIN
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-interface
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>topology base
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-topology
+router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>network 10.1.0.0 0.0.0.255
+router eigrp CORE-EIGRP>exit-address-family
+router ospf 1>router-id 10.10.10.10
+router ospf 1>area 0 authentication message-digest
+router ospf 1>passive-interface default
+router ospf 1>no passive-interface GigabitEthernet0/1
+router ospf 1>network 10.1.0.0 0.0.0.255 area 0
+router bgp 65001>bgp log-neighbor-changes
+router bgp 65001>neighbor 198.51.100.1 remote-as 65002
+router bgp 65001>neighbor 198.51.100.1 password CHANGE_ME_Bgp#Key2026
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 10.1.0.0 0.0.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 127.0.0.0 0.255.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 10.0.0.0 0.255.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 0.0.0.0 0.255.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 172.16.0.0 0.15.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 192.168.0.0 0.0.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 192.0.2.0 0.0.0.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 169.254.0.0 0.0.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip 224.0.0.0 31.255.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>deny   ip host 255.255.255.255 any log
+ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 host 198.51.100.2 eq bgp log
+ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 eq bgp host 198.51.100.2 log
+ip access-list extended ACL-EXTERNAL-IN>permit tcp any 203.0.113.0 0.0.0.255 eq 443 log
+ip access-list extended ACL-EXTERNAL-IN>permit tcp any any established
+ip access-list extended ACL-EXTERNAL-IN>deny   ip any any log
+*********************************************************************>You are logged in to a restricted network device.
+*********************************************************************>All commands are logged and audited.
+*********************************************************************>AUTHORIZED ACCESS ONLY. Unauthorized access is prohibited and
+*********************************************************************>will be prosecuted. Activity on this device is monitored.
+*********************************************************************>NOTICE: This system is the property of EXAMPLE ORG.
+*********************************************************************>Use is restricted to authorized personnel only.
+line con 0>exec-timeout 10 0
+line con 0>login authentication default
+line con 0>logging synchronous
+line aux 0>exec-timeout 10 0
+line aux 0>no exec
+line aux 0>transport input none
+line aux 0>transport output none
+line vty 0 4>access-class 100 in
+line vty 0 4>exec-timeout 10 0
+line vty 0 4>login authentication default
+line vty 0 4>transport input ssh
+line vty 5 15>access-class 100 in
+line vty 5 15>exec-timeout 10 0
+line vty 5 15>login authentication default
+line vty 5 15>transport input ssh

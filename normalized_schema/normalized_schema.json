@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "HEXAFORGE",
+  "device": {
+    "vendor": null,
+    "device_type": null,
+    "hostname": null,
+    "model": null,
+    "serial_number": null,
+    "os_name": null,
+    "os_version": null,
+    "timezone": null,
+    "management_ip": null
+  },
+
+  "authentication": {
+    "ssh_enabled": null,
+    "ssh_version": null,
+    "ssh_idle_timeout": null,
+    "password_min_length": null,
+    "password_complexity": {
+      "uppercase": null,
+      "lowercase": null,
+      "numeric": null,
+      "special": null
+    },
+    "max_login_attempts": null,
+    "lockout_duration": null,
+    "mfa_enabled": null,
+    "radius_enabled": null,
+    "tacacs_enabled": null,
+    "ldap_enabled": null
+  },
+
+  "management_access": {
+    "https_enabled": null,
+    "http_enabled": null,
+    "telnet_enabled": null,
+    "console_timeout": null,
+    "management_interfaces": [],
+    "trusted_hosts": []
+  },
+
+  "cryptography": {
+    "tls_versions": [],
+    "strong_crypto": null,
+    "ssl_inspection": null,
+    "certificate_validation": null
+  },
+
+  "network": {
+    "interfaces": [],
+    "vlans": [],
+    "zones": [],
+    "static_routes": [],
+    "ha_enabled": null
+  },
+
+  "monitoring": {
+    "snmp": {
+      "enabled": null,
+      "version": null,
+      "communities_removed": null,
+      "snmpv3": null
+    },
+    "syslog": {
+      "enabled": null,
+      "remote_servers": []
+    },
+    "audit_logging": null
+  },
+
+  "services": {
+    "dns_servers": [],
+    "ntp_servers": [],
+    "web_proxy": null,
+    "smtp_relay": null
+  },
+
+  "firewall_security": {
+    "default_deny": null,
+    "utm_enabled": null,
+    "ips_enabled": null,
+    "antivirus_enabled": null,
+    "web_filter_enabled": null,
+    "dns_filter_enabled": null,
+    "application_control_enabled": null,
+    "botnet_protection": null,
+    "zero_day_protection": null
+  },
+
+  "vpn": {
+    "ssl_vpn": {
+      "enabled": null,
+      "tls_min_version": null
+    },
+    "ipsec": {
+      "enabled": null,
+      "ike_version": null,
+      "pfs": null
+    }
+  },
+
+  "backup_updates": {
+    "automatic_updates": null,
+    "scheduled_backup": null,
+    "encrypted_backup": null
+  },
+
+  "compliance": {
+    "framework": null,
+    "controls": []
+  }
+}

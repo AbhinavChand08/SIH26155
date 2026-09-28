@@ -1,0 +1,412 @@
+[
+    {
+        "original_command": "tacacs server TACACS-SRV-1>address ipv4 10.1.1.10",
+        "cluster_id": 1,
+        "template": "tacacs server TACACS-SRV-1>address ipv4 10.1.1.10"
+    },
+    {
+        "original_command": "tacacs server TACACS-SRV-1>key CHANGE_ME_Tacacs#Key2026",
+        "cluster_id": 2,
+        "template": "tacacs server TACACS-SRV-1>key CHANGE_ME_Tacacs#Key2026"
+    },
+    {
+        "original_command": "aaa group server tacacs+ TACACS-GROUP>server name TACACS-SRV-1",
+        "cluster_id": 3,
+        "template": "aaa group server tacacs+ TACACS-GROUP>server name TACACS-SRV-1"
+    },
+    {
+        "original_command": "aaa group server tacacs+ TACACS-GROUP>ip tacacs source-interface Loopback0",
+        "cluster_id": 4,
+        "template": "aaa group server tacacs+ TACACS-GROUP>ip tacacs source-interface Loopback0"
+    },
+    {
+        "original_command": "archive>log config",
+        "cluster_id": 5,
+        "template": "archive>log config"
+    },
+    {
+        "original_command": "archive>log config>logging enable",
+        "cluster_id": 6,
+        "template": "archive>log config>logging enable"
+    },
+    {
+        "original_command": "key chain EIGRP-KEYCHAIN>key 1",
+        "cluster_id": 7,
+        "template": "key chain EIGRP-KEYCHAIN>key 1"
+    },
+    {
+        "original_command": "key chain EIGRP-KEYCHAIN>key 1>key-string CHANGE_ME_Eigrp#Key2026",
+        "cluster_id": 8,
+        "template": "key chain EIGRP-KEYCHAIN>key 1>key-string CHANGE_ME_Eigrp#Key2026"
+    },
+    {
+        "original_command": "interface Loopback0>description MGMT-SOURCE-LOOPBACK",
+        "cluster_id": 9,
+        "template": "interface Loopback0>description MGMT-SOURCE-LOOPBACK"
+    },
+    {
+        "original_command": "interface Loopback0>ip address 10.10.10.10 255.255.255.255",
+        "cluster_id": 10,
+        "template": "interface Loopback0>ip address 10.10.10.10 255.255.255.255"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>description EXTERNAL-UNTRUSTED",
+        "cluster_id": 11,
+        "template": "interface GigabitEthernet0/0>description EXTERNAL-UNTRUSTED"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>ip address 198.51.100.2 255.255.255.252",
+        "cluster_id": 12,
+        "template": "interface GigabitEthernet0/0>ip address 198.51.100.2 255.255.255.252"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>ip access-group ACL-EXTERNAL-IN in",
+        "cluster_id": 13,
+        "template": "interface GigabitEthernet0/0>ip access-group ACL-EXTERNAL-IN in"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>ip verify unicast source reachable-via rx allow-default",
+        "cluster_id": 14,
+        "template": "interface GigabitEthernet0/0>ip verify unicast source reachable-via rx allow-default"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>no ip proxy-arp",
+        "cluster_id": 15,
+        "template": "interface GigabitEthernet0/0>no ip proxy-arp"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/0>no shutdown",
+        "cluster_id": 16,
+        "template": "interface GigabitEthernet0/0>no shutdown"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/1>description INTERNAL-TRUSTED",
+        "cluster_id": 17,
+        "template": "interface GigabitEthernet0/1>description INTERNAL-TRUSTED"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/1>ip address 10.1.0.1 255.255.255.0",
+        "cluster_id": 18,
+        "template": "interface GigabitEthernet0/1>ip address 10.1.0.1 255.255.255.0"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/1>ip ospf message-digest-key 1 md5 CHANGE_ME_Ospf#Key2026",
+        "cluster_id": 19,
+        "template": "interface GigabitEthernet0/1>ip ospf message-digest-key 1 md5 CHANGE_ME_Ospf#Key2026"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/1>no ip proxy-arp",
+        "cluster_id": 15,
+        "template": "interface <*> ip proxy-arp"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/1>no shutdown",
+        "cluster_id": 16,
+        "template": "interface <*> shutdown"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/2>description MGMT-ZONE",
+        "cluster_id": 20,
+        "template": "interface GigabitEthernet0/2>description MGMT-ZONE"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/2>ip address 10.1.1.1 255.255.255.0",
+        "cluster_id": 18,
+        "template": "interface <*> address <*> 255.255.255.0"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/2>no ip proxy-arp",
+        "cluster_id": 15,
+        "template": "interface <*> ip proxy-arp"
+    },
+    {
+        "original_command": "interface GigabitEthernet0/2>no shutdown",
+        "cluster_id": 16,
+        "template": "interface <*> shutdown"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100",
+        "cluster_id": 21,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface default",
+        "cluster_id": 22,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface default"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface default>passive-interface",
+        "cluster_id": 22,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-interface",
+        "cluster_id": 21,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1",
+        "cluster_id": 22,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>no passive-interface",
+        "cluster_id": 23,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>no passive-interface"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication mode md5",
+        "cluster_id": 24,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication mode md5"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication key-chain EIGRP-KEYCHAIN",
+        "cluster_id": 24,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>af-interface GigabitEthernet0/1>authentication <*> <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-interface",
+        "cluster_id": 21,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>topology base",
+        "cluster_id": 22,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system <*> <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>exit-af-topology",
+        "cluster_id": 21,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system 100>network 10.1.0.0 0.0.0.255",
+        "cluster_id": 23,
+        "template": "router eigrp CORE-EIGRP>address-family ipv4 unicast autonomous-system <*> <*> <*>"
+    },
+    {
+        "original_command": "router eigrp CORE-EIGRP>exit-address-family",
+        "cluster_id": 25,
+        "template": "router eigrp CORE-EIGRP>exit-address-family"
+    },
+    {
+        "original_command": "router ospf 1>router-id 10.10.10.10",
+        "cluster_id": 26,
+        "template": "router ospf 1>router-id 10.10.10.10"
+    },
+    {
+        "original_command": "router ospf 1>area 0 authentication message-digest",
+        "cluster_id": 27,
+        "template": "router ospf 1>area 0 authentication message-digest"
+    },
+    {
+        "original_command": "router ospf 1>passive-interface default",
+        "cluster_id": 26,
+        "template": "router ospf <*> <*>"
+    },
+    {
+        "original_command": "router ospf 1>no passive-interface GigabitEthernet0/1",
+        "cluster_id": 28,
+        "template": "router ospf 1>no passive-interface GigabitEthernet0/1"
+    },
+    {
+        "original_command": "router ospf 1>network 10.1.0.0 0.0.0.255 area 0",
+        "cluster_id": 29,
+        "template": "router ospf 1>network 10.1.0.0 0.0.0.255 area 0"
+    },
+    {
+        "original_command": "router bgp 65001>bgp log-neighbor-changes",
+        "cluster_id": 30,
+        "template": "router bgp 65001>bgp log-neighbor-changes"
+    },
+    {
+        "original_command": "router bgp 65001>neighbor 198.51.100.1 remote-as 65002",
+        "cluster_id": 31,
+        "template": "router bgp 65001>neighbor 198.51.100.1 remote-as 65002"
+    },
+    {
+        "original_command": "router bgp 65001>neighbor 198.51.100.1 password CHANGE_ME_Bgp#Key2026",
+        "cluster_id": 31,
+        "template": "router bgp 65001>neighbor 198.51.100.1 <*> <*>"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 10.1.0.0 0.0.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip 10.1.0.0 0.0.255.255 any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 127.0.0.0 0.255.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 10.0.0.0 0.255.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 0.0.0.0 0.255.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 172.16.0.0 0.15.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 192.168.0.0 0.0.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 192.0.2.0 0.0.0.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 169.254.0.0 0.0.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip 224.0.0.0 31.255.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip host 255.255.255.255 any log",
+        "cluster_id": 32,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>deny ip <*> <*> any log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 host 198.51.100.2 eq bgp log",
+        "cluster_id": 33,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 host 198.51.100.2 eq bgp log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 eq bgp host 198.51.100.2 log",
+        "cluster_id": 33,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>permit tcp host 198.51.100.1 <*> <*> <*> <*> log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>permit tcp any 203.0.113.0 0.0.0.255 eq 443 log",
+        "cluster_id": 34,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>permit tcp any 203.0.113.0 0.0.0.255 eq 443 log"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>permit tcp any any established",
+        "cluster_id": 35,
+        "template": "ip access-list extended ACL-EXTERNAL-IN>permit tcp any any established"
+    },
+    {
+        "original_command": "ip access-list extended ACL-EXTERNAL-IN>deny   ip any any log",
+        "cluster_id": 35,
+        "template": "ip access-list extended <*> <*> any any <*>"
+    },
+    {
+        "original_command": "*********************************************************************>You are logged in to a restricted network device.",
+        "cluster_id": 36,
+        "template": "*********************************************************************>You are logged in to a restricted network device."
+    },
+    {
+        "original_command": "*********************************************************************>All commands are logged and audited.",
+        "cluster_id": 37,
+        "template": "*********************************************************************>All commands are logged and audited."
+    },
+    {
+        "original_command": "*********************************************************************>AUTHORIZED ACCESS ONLY. Unauthorized access is prohibited and",
+        "cluster_id": 38,
+        "template": "*********************************************************************>AUTHORIZED ACCESS ONLY. Unauthorized access is prohibited and"
+    },
+    {
+        "original_command": "*********************************************************************>will be prosecuted. Activity on this device is monitored.",
+        "cluster_id": 39,
+        "template": "*********************************************************************>will be prosecuted. Activity on this device is monitored."
+    },
+    {
+        "original_command": "*********************************************************************>NOTICE: This system is the property of EXAMPLE ORG.",
+        "cluster_id": 40,
+        "template": "*********************************************************************>NOTICE: This system is the property of EXAMPLE ORG."
+    },
+    {
+        "original_command": "*********************************************************************>Use is restricted to authorized personnel only.",
+        "cluster_id": 41,
+        "template": "*********************************************************************>Use is restricted to authorized personnel only."
+    },
+    {
+        "original_command": "line con 0>exec-timeout 10 0",
+        "cluster_id": 42,
+        "template": "line con 0>exec-timeout 10 0"
+    },
+    {
+        "original_command": "line con 0>login authentication default",
+        "cluster_id": 43,
+        "template": "line con 0>login authentication default"
+    },
+    {
+        "original_command": "line con 0>logging synchronous",
+        "cluster_id": 44,
+        "template": "line con 0>logging synchronous"
+    },
+    {
+        "original_command": "line aux 0>exec-timeout 10 0",
+        "cluster_id": 45,
+        "template": "line aux 0>exec-timeout 10 0"
+    },
+    {
+        "original_command": "line aux 0>no exec",
+        "cluster_id": 46,
+        "template": "line aux 0>no exec"
+    },
+    {
+        "original_command": "line aux 0>transport input none",
+        "cluster_id": 47,
+        "template": "line aux 0>transport input none"
+    },
+    {
+        "original_command": "line aux 0>transport output none",
+        "cluster_id": 47,
+        "template": "line aux 0>transport <*> none"
+    },
+    {
+        "original_command": "line vty 0 4>access-class 100 in",
+        "cluster_id": 48,
+        "template": "line vty 0 4>access-class 100 in"
+    },
+    {
+        "original_command": "line vty 0 4>exec-timeout 10 0",
+        "cluster_id": 48,
+        "template": "line vty 0 <*> <*> <*>"
+    },
+    {
+        "original_command": "line vty 0 4>login authentication default",
+        "cluster_id": 48,
+        "template": "line vty 0 <*> <*> <*>"
+    },
+    {
+        "original_command": "line vty 0 4>transport input ssh",
+        "cluster_id": 48,
+        "template": "line vty 0 <*> <*> <*>"
+    },
+    {
+        "original_command": "line vty 5 15>access-class 100 in",
+        "cluster_id": 49,
+        "template": "line vty 5 15>access-class 100 in"
+    },
+    {
+        "original_command": "line vty 5 15>exec-timeout 10 0",
+        "cluster_id": 49,
+        "template": "line vty 5 <*> <*> <*>"
+    },
+    {
+        "original_command": "line vty 5 15>login authentication default",
+        "cluster_id": 49,
+        "template": "line vty 5 <*> <*> <*>"
+    },
+    {
+        "original_command": "line vty 5 15>transport input ssh",
+        "cluster_id": 49,
+        "template": "line vty 5 <*> <*> <*>"
+    }
+]
